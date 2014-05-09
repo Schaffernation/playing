@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -13,6 +14,14 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="NPAppDelegate">
             <connections>
+                <outlet property="Composer" destination="bdd-5U-4LR" id="AYZ-gx-jWg"/>
+                <outlet property="album" destination="VEI-7i-ZL4" id="T9r-Dg-BhQ"/>
+                <outlet property="artist" destination="gEl-Jj-NUo" id="aCr-PN-jd2"/>
+                <outlet property="artwork" destination="NhC-z3-y6c" id="iFc-6i-R16"/>
+                <outlet property="centeredCell" destination="R7A-qh-lAb" id="YWL-6n-Wml"/>
+                <outlet property="centeredLabel" destination="Pug-tg-ALk" id="Bc9-Ef-fJ0"/>
+                <outlet property="composer" destination="bdd-5U-4LR" id="8Fn-Rp-Ctd"/>
+                <outlet property="title" destination="vz3-Eb-jnt" id="yEo-T1-qr7"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -464,14 +473,14 @@
                                                             <action selector="subscript:" target="-1" id="Q6W-4W-IGz"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem title="Raise" id="2h7-ER-AoG">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    <menuItem title="Raise" keyEquivalent="]" id="2h7-ER-AoG">
+                                                        <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
                                                         <connections>
                                                             <action selector="raiseBaseline:" target="-1" id="4sk-31-7Q9"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem title="Lower" id="1tx-W0-xDw">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    <menuItem title="Lower" keyEquivalent="[" id="1tx-W0-xDw">
+                                                        <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES" command="YES"/>
                                                         <connections>
                                                             <action selector="lowerBaseline:" target="-1" id="OF1-bc-KW4"/>
                                                         </connections>
@@ -666,14 +675,93 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="playing" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="playing" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" appearanceType="aqua" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="335" y="390" width="1213" height="641"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="1213" height="641"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NhC-z3-y6c" userLabel="Artwork" customClass="NSImageView">
+                        <rect key="frame" x="117" y="20" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="600" id="L9V-7V-xCx"/>
+                            <constraint firstAttribute="width" secondItem="NhC-z3-y6c" secondAttribute="height" multiplier="1:1" id="xgw-hM-sFc"/>
+                        </constraints>
+                    </customView>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-Eb-jnt">
+                        <rect key="frame" x="765" y="347" width="430" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Title" placeholderString="Title" id="FW0-j0-NTf">
+                            <font key="font" size="40" name="Avenir-Book"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-cu-tXg">
+                        <rect key="frame" x="765" y="273" width="430" height="37"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Artist" placeholderString="Artist" id="gEl-Jj-NUo">
+                            <font key="font" size="22" name="Avenir-Book"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-7i-ZL4">
+                        <rect key="frame" x="765" y="228" width="430" height="37"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Album" placeholderString="Album" id="3Ed-VN-uAq">
+                            <font key="font" size="22" name="Avenir-Book"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-5U-4LR">
+                        <rect key="frame" x="765" y="183" width="430" height="37"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Composer" placeholderString="Composer" id="sjb-j6-Sjr">
+                            <font key="font" size="22" name="Avenir-Book"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-tg-ALk">
+                        <rect key="frame" x="240" y="281" width="732" height="79"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="728" id="eCP-RA-A27"/>
+                            <constraint firstAttribute="height" constant="79" id="fjz-Fd-L4O"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Nothing Playing" placeholderString="" id="R7A-qh-lAb">
+                            <font key="font" size="40" name="Avenir-HeavyOblique"/>
+                            <color key="backgroundColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <outlet property="representedObject" destination="Pug-tg-ALk" id="tH5-b7-4Tg"/>
+                            </connections>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VEI-7i-ZL4" secondAttribute="trailing" constant="20" symbolic="YES" id="1qv-1V-xrq"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="MPe-cu-tXg" secondAttribute="centerX" id="3sX-Ij-2eE"/>
+                    <constraint firstAttribute="centerY" secondItem="NhC-z3-y6c" secondAttribute="centerY" id="4RW-a7-7oD"/>
+                    <constraint firstAttribute="trailing" secondItem="MPe-cu-tXg" secondAttribute="trailing" constant="20" symbolic="YES" id="5ZV-ht-fcz"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="bdd-5U-4LR" secondAttribute="centerX" id="5uz-64-Buj"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="bdd-5U-4LR" secondAttribute="leading" id="8g0-u5-h2q"/>
+                    <constraint firstItem="vz3-Eb-jnt" firstAttribute="leading" secondItem="NhC-z3-y6c" secondAttribute="trailing" constant="50" id="BwX-00-Ocv"/>
+                    <constraint firstAttribute="centerX" secondItem="NhC-z3-y6c" secondAttribute="centerX" constant="190" id="CQj-5o-n8j"/>
+                    <constraint firstAttribute="trailing" secondItem="bdd-5U-4LR" secondAttribute="trailing" constant="20" symbolic="YES" id="G4B-fT-rTz"/>
+                    <constraint firstAttribute="centerY" secondItem="MPe-cu-tXg" secondAttribute="centerY" constant="-29" id="PZT-J8-QqY"/>
+                    <constraint firstAttribute="centerY" secondItem="Pug-tg-ALk" secondAttribute="centerY" id="PvE-Do-8e2"/>
+                    <constraint firstAttribute="centerY" secondItem="vz3-Eb-jnt" secondAttribute="centerY" constant="60" id="UY3-va-caj"/>
+                    <constraint firstAttribute="centerY" secondItem="bdd-5U-4LR" secondAttribute="centerY" constant="-119" id="bJq-ju-e3P"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="vz3-Eb-jnt" secondAttribute="leading" id="ch1-YP-NKn"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="MPe-cu-tXg" secondAttribute="leading" id="pSp-6r-f5c"/>
+                    <constraint firstAttribute="centerX" secondItem="Pug-tg-ALk" secondAttribute="centerX" constant="0.5" id="ssF-If-14a"/>
+                    <constraint firstAttribute="trailing" secondItem="vz3-Eb-jnt" secondAttribute="trailing" constant="20" symbolic="YES" id="w7y-el-wep"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="vz3-Eb-jnt" secondAttribute="centerX" id="xbD-ct-08y"/>
+                    <constraint firstAttribute="centerY" secondItem="VEI-7i-ZL4" secondAttribute="centerY" constant="-74" id="yme-oz-b9T"/>
+                </constraints>
             </view>
         </window>
     </objects>

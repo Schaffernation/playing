@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8C371A8191D54E800348CAE /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D8C371A7191D54E800348CAE /* Icon.icns */; };
 		D8CEAA96191BD689003FEE23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEAA95191BD689003FEE23 /* Cocoa.framework */; };
 		D8CEAAA0191BD689003FEE23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8CEAA9E191BD689003FEE23 /* InfoPlist.strings */; };
 		D8CEAAA2191BD689003FEE23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CEAAA1191BD689003FEE23 /* main.m */; };
 		D8CEAAA6191BD689003FEE23 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D8CEAAA4191BD689003FEE23 /* Credits.rtf */; };
 		D8CEAAA9191BD689003FEE23 /* NPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CEAAA8191BD689003FEE23 /* NPAppDelegate.m */; };
 		D8CEAAAC191BD689003FEE23 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CEAAAA191BD689003FEE23 /* MainMenu.xib */; };
-		D8CEAAAE191BD689003FEE23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CEAAAD191BD689003FEE23 /* Images.xcassets */; };
 		D8CEAAB5191BD689003FEE23 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEAAB4191BD689003FEE23 /* XCTest.framework */; };
 		D8CEAAB6191BD689003FEE23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEAA95191BD689003FEE23 /* Cocoa.framework */; };
 		D8CEAABE191BD689003FEE23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8CEAABC191BD689003FEE23 /* InfoPlist.strings */; };
 		D8CEAAC0191BD689003FEE23 /* playingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CEAABF191BD689003FEE23 /* playingTests.m */; };
+		D8CEAACA191BD979003FEE23 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEAAC9191BD979003FEE23 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D82FE2F4191BDB5000F9B3AD /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		D8C371A7191D54E800348CAE /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		D8C371A9191D594A00348CAE /* rdio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdio.h; sourceTree = "<group>"; };
 		D8CEAA92191BD689003FEE23 /* playing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEAA95191BD689003FEE23 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D8CEAA98191BD689003FEE23 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -44,12 +48,12 @@
 		D8CEAAA7191BD689003FEE23 /* NPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPAppDelegate.h; sourceTree = "<group>"; };
 		D8CEAAA8191BD689003FEE23 /* NPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPAppDelegate.m; sourceTree = "<group>"; };
 		D8CEAAAB191BD689003FEE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D8CEAAAD191BD689003FEE23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D8CEAAB3191BD689003FEE23 /* playingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEAAB4191BD689003FEE23 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D8CEAABB191BD689003FEE23 /* playingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "playingTests-Info.plist"; sourceTree = "<group>"; };
 		D8CEAABD191BD689003FEE23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8CEAABF191BD689003FEE23 /* playingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playingTests.m; sourceTree = "<group>"; };
+		D8CEAAC9191BD979003FEE23 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CEAACA191BD979003FEE23 /* ScriptingBridge.framework in Frameworks */,
 				D8CEAA96191BD689003FEE23 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +81,7 @@
 		D8CEAA89191BD689003FEE23 = {
 			isa = PBXGroup;
 			children = (
+				D8C371A7191D54E800348CAE /* Icon.icns */,
 				D8CEAA9B191BD689003FEE23 /* playing */,
 				D8CEAAB9191BD689003FEE23 /* playingTests */,
 				D8CEAA94191BD689003FEE23 /* Frameworks */,
@@ -95,6 +101,7 @@
 		D8CEAA94191BD689003FEE23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8CEAAC9191BD979003FEE23 /* ScriptingBridge.framework */,
 				D8CEAA95191BD689003FEE23 /* Cocoa.framework */,
 				D8CEAAB4191BD689003FEE23 /* XCTest.framework */,
 				D8CEAA97191BD689003FEE23 /* Other Frameworks */,
@@ -118,7 +125,8 @@
 				D8CEAAA7191BD689003FEE23 /* NPAppDelegate.h */,
 				D8CEAAA8191BD689003FEE23 /* NPAppDelegate.m */,
 				D8CEAAAA191BD689003FEE23 /* MainMenu.xib */,
-				D8CEAAAD191BD689003FEE23 /* Images.xcassets */,
+				D82FE2F4191BDB5000F9B3AD /* iTunes.h */,
+				D8C371A9191D594A00348CAE /* rdio.h */,
 				D8CEAA9C191BD689003FEE23 /* Supporting Files */,
 			);
 			path = playing;
@@ -232,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CEAAA0191BD689003FEE23 /* InfoPlist.strings in Resources */,
-				D8CEAAAE191BD689003FEE23 /* Images.xcassets in Resources */,
 				D8CEAAA6191BD689003FEE23 /* Credits.rtf in Resources */,
+				D8C371A8191D54E800348CAE /* Icon.icns in Resources */,
 				D8CEAAAC191BD689003FEE23 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +393,6 @@
 		D8CEAAC4191BD689003FEE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
@@ -398,7 +405,6 @@
 		D8CEAAC5191BD689003FEE23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
@@ -467,6 +473,7 @@
 				D8CEAAC5191BD689003FEE23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8CEAAC6191BD689003FEE23 /* Build configuration list for PBXNativeTarget "playingTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				D8CEAAC8191BD689003FEE23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

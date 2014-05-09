@@ -7,9 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class iTunesApplication;
+@class rdioApplication;
 
 @interface NPAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTextField *title;
+@property (weak) IBOutlet NSTextFieldCell *artist;
+@property (weak) IBOutlet NSTextField *album;
+@property (weak) IBOutlet NSTextField *composer;
+@property (weak) IBOutlet NSImageView *artwork;
+@property (weak) IBOutlet NSTextField *centeredLabel;
+@property (weak) IBOutlet NSTextFieldCell *centeredCell;
+
+@property (strong) iTunesApplication *iTunes;
+@property (strong) rdioApplication *rdio;
 
 @end
