@@ -141,10 +141,12 @@
     editedArtist = [editedArtist stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
     editedArtist = [editedArtist stringByReplacingOccurrencesOfString:@"/" withString:@" / "];
     
+    
+    
     NSMutableAttributedString *styledArtist = [[NSMutableAttributedString alloc] initWithString:editedArtist];
 
     [self applyFont:@"Avenir-Light" withSize:35 toPattern:@"/" attributeString:styledArtist];
-//    [self applyFont:@"Avenir-Light-Oblique" withSize:35 toPattern:@"\\(.+\\)" attributeString:styledArtist];
+    [self applyFont:@"Avenir-Light" withSize:35 toPattern:@"\\(.+\\)" attributeString:styledArtist];
     
     return styledArtist;
     
@@ -157,8 +159,8 @@
     //  enumerate matches
     NSRange range = NSMakeRange(0, [string length]);
     [expression enumerateMatchesInString:string options:0 range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-        NSRange slashRange = [result rangeAtIndex:0];
-        [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:fontName size:size] range:slashRange];
+        NSRange matchRange = [result rangeAtIndex:0];
+        [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:fontName size:size] range:matchRange];
     }];
 }
 

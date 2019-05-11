@@ -722,12 +722,12 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-cu-tXg">
-                        <rect key="frame" x="523" y="500" width="657" height="50"/>
+                        <rect key="frame" x="523" y="491" width="657" height="59"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="FU2-Mv-ObD"/>
                         </constraints>
                         <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Artist" placeholderString="Artist" allowsEditingTextAttributes="YES" id="gEl-Jj-NUo">
-                            <font key="font" size="30" name="Avenir-Roman"/>
+                            <font key="font" size="35" name="Avenir-Roman"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
                         </textFieldCell>
                     </textField>
