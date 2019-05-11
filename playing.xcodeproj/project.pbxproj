@@ -210,6 +210,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "now playing";
 				TargetAttributes = {
+					D8CEAA91191BD689003FEE23 = {
+						LastSwiftMigration = 0920;
+					};
 					D8CEAAB2191BD689003FEE23 = {
 						TestTargetID = D8CEAA91191BD689003FEE23;
 					};
@@ -393,11 +396,16 @@
 		D8CEAAC4191BD689003FEE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
 				INFOPLIST_FILE = "playing/playing-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "playing/playing-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,11 +413,15 @@
 		D8CEAAC5191BD689003FEE23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
 				INFOPLIST_FILE = "playing/playing-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "playing/playing-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

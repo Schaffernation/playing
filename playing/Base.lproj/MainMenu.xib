@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +14,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="NPAppDelegate">
             <connections>
                 <outlet property="album" destination="VEI-7i-ZL4" id="T9r-Dg-BhQ"/>
@@ -678,65 +681,30 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="1195" height="641"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="contentRect" x="335" y="390" width="1218" height="750"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1195" height="641"/>
+                <rect key="frame" x="0.0" y="0.0" width="1218" height="750"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="NhC-z3-y6c" userLabel="Artwork" customClass="NSImageView">
-                        <rect key="frame" x="-60" y="20" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <rect key="frame" x="75" y="200" width="350" height="350"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="600" id="L9V-7V-xCx"/>
-                            <constraint firstAttribute="width" secondItem="NhC-z3-y6c" secondAttribute="height" multiplier="1:1" id="xgw-hM-sFc"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="1xV-dn-PQN"/>
+                            <constraint firstAttribute="width" secondItem="NhC-z3-y6c" secondAttribute="height" multiplier="1:1" id="5Fa-5t-i32"/>
                         </constraints>
                     </customView>
-                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-Eb-jnt">
-                        <rect key="frame" x="613" y="348" width="496" height="83"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="700" id="WKg-KT-RI5"/>
-                        </constraints>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Title" placeholderString="Title" id="FW0-j0-NTf">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-Eb-jnt">
+                        <rect key="frame" x="73" y="637" width="1072" height="83"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Title" placeholderString="Title" id="FW0-j0-NTf">
                             <font key="font" size="50" name="Avenir-Heavy"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
                         </textFieldCell>
                     </textField>
-                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-cu-tXg">
-                        <rect key="frame" x="613" y="271" width="504" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Artist" placeholderString="Artist" id="gEl-Jj-NUo">
-                            <font key="font" size="30" name="Avenir-Roman"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-7i-ZL4">
-                        <rect key="frame" x="613" y="213" width="504" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Album" placeholderString="Album" id="3Ed-VN-uAq">
-                            <font key="font" size="30" name="Avenir-Oblique"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-5U-4LR">
-                        <rect key="frame" x="613" y="155" width="504" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-tg-ALk">
+                        <rect key="frame" x="207" y="334" width="804" height="83"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="800" id="BCJ-LD-x3C"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="hYi-CO-q1J"/>
-                        </constraints>
-                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Composer" placeholderString="Composer" id="sjb-j6-Sjr">
-                            <font key="font" size="30" name="Avenir-Roman"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-tg-ALk">
-                        <rect key="frame" x="231" y="275" width="732" height="90"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="728" id="eCP-RA-A27"/>
-                            <constraint firstAttribute="height" constant="90" id="fjz-Fd-L4O"/>
+                            <constraint firstAttribute="width" constant="800" id="YQJ-NH-UNf"/>
                         </constraints>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Nothing Playing" placeholderString="" id="R7A-qh-lAb">
                             <font key="font" size="50" name="Avenir-HeavyOblique"/>
@@ -746,24 +714,53 @@
                             </connections>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-7i-ZL4">
+                        <rect key="frame" x="73" y="130" width="354" height="50"/>
+                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Album" placeholderString="Album" id="3Ed-VN-uAq">
+                            <font key="font" size="30" name="Avenir-Oblique"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-cu-tXg">
+                        <rect key="frame" x="523" y="500" width="657" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="FU2-Mv-ObD"/>
+                        </constraints>
+                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Artist" placeholderString="Artist" allowsEditingTextAttributes="YES" id="gEl-Jj-NUo">
+                            <font key="font" size="30" name="Avenir-Roman"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-5U-4LR">
+                        <rect key="frame" x="363" y="591" width="504" height="50"/>
+                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Composer" placeholderString="Composer" id="sjb-j6-Sjr">
+                            <font key="font" size="30" name="Avenir-Roman"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="deviceWhite"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="top" secondItem="MPe-cu-tXg" secondAttribute="bottom" constant="8" id="34X-9G-8OR"/>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="MPe-cu-tXg" secondAttribute="centerX" id="3sX-Ij-2eE"/>
-                    <constraint firstAttribute="centerY" secondItem="NhC-z3-y6c" secondAttribute="centerY" id="4RW-a7-7oD"/>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="bdd-5U-4LR" secondAttribute="centerX" id="5uz-64-Buj"/>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="bdd-5U-4LR" secondAttribute="leading" id="8g0-u5-h2q"/>
-                    <constraint firstItem="vz3-Eb-jnt" firstAttribute="leading" secondItem="NhC-z3-y6c" secondAttribute="trailing" constant="75" id="BwX-00-Ocv"/>
-                    <constraint firstAttribute="centerY" secondItem="Pug-tg-ALk" secondAttribute="centerY" id="PvE-Do-8e2"/>
-                    <constraint firstAttribute="centerX" secondItem="NhC-z3-y6c" secondAttribute="centerX" constant="357.5" id="T9Q-Ih-fDq"/>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="vz3-Eb-jnt" secondAttribute="leading" id="ch1-YP-NKn"/>
-                    <constraint firstItem="MPe-cu-tXg" firstAttribute="top" secondItem="vz3-Eb-jnt" secondAttribute="bottom" constant="27" id="jzL-0i-46A"/>
-                    <constraint firstItem="bdd-5U-4LR" firstAttribute="top" secondItem="VEI-7i-ZL4" secondAttribute="bottom" constant="8" id="on3-37-3gA"/>
-                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="MPe-cu-tXg" secondAttribute="leading" id="pSp-6r-f5c"/>
-                    <constraint firstAttribute="centerX" secondItem="Pug-tg-ALk" secondAttribute="centerX" constant="0.5" id="ssF-If-14a"/>
-                    <constraint firstAttribute="centerY" secondItem="vz3-Eb-jnt" secondAttribute="centerY" constant="69" id="x8T-ni-wcG"/>
+                    <constraint firstItem="NhC-z3-y6c" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="1Eh-8s-za3"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="leading" secondItem="NhC-z3-y6c" secondAttribute="leading" id="6cp-xQ-TjO"/>
+                    <constraint firstItem="bdd-5U-4LR" firstAttribute="firstBaseline" secondItem="vz3-Eb-jnt" secondAttribute="baseline" constant="50" id="BHd-s3-sEs"/>
+                    <constraint firstItem="bdd-5U-4LR" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="Ead-j3-wX0"/>
+                    <constraint firstItem="MPe-cu-tXg" firstAttribute="top" secondItem="NhC-z3-y6c" secondAttribute="top" id="GQt-br-J4c"/>
+                    <constraint firstItem="vz3-Eb-jnt" firstAttribute="leading" secondItem="NhC-z3-y6c" secondAttribute="leading" id="HGQ-Rw-Ldx"/>
+                    <constraint firstItem="Pug-tg-ALk" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="PWs-Gn-c1D"/>
+                    <constraint firstAttribute="trailing" secondItem="MPe-cu-tXg" secondAttribute="trailing" constant="40" id="S1a-i0-wpe"/>
+                    <constraint firstItem="NhC-z3-y6c" firstAttribute="top" secondItem="bdd-5U-4LR" secondAttribute="bottom" constant="45" id="U3j-vS-GMY"/>
+                    <constraint firstItem="MPe-cu-tXg" firstAttribute="leading" secondItem="NhC-z3-y6c" secondAttribute="trailing" constant="100" id="cA6-JL-aft"/>
+                    <constraint firstItem="vz3-Eb-jnt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="30" id="cNx-jE-ihv"/>
+                    <constraint firstItem="bdd-5U-4LR" firstAttribute="leading" secondItem="vz3-Eb-jnt" secondAttribute="leading" id="dJL-s1-yPw"/>
+                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="NhC-z3-y6c" secondAttribute="bottom" constant="200" id="fpV-t8-0A0"/>
+                    <constraint firstItem="vz3-Eb-jnt" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="l8h-t9-D60"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="centerX" secondItem="NhC-z3-y6c" secondAttribute="centerX" id="omu-zF-O91"/>
+                    <constraint firstItem="VEI-7i-ZL4" firstAttribute="top" secondItem="NhC-z3-y6c" secondAttribute="bottom" constant="20" id="oph-el-J6L"/>
+                    <constraint firstItem="Pug-tg-ALk" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="wFT-Fp-GQu"/>
+                    <constraint firstItem="NhC-z3-y6c" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="75" id="yd2-Dc-Oc9"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="-114" y="278"/>
         </window>
     </objects>
 </document>

@@ -35,6 +35,7 @@
                                                           name:@"com.rdio.desktop.playStateChanged"
                                                         object:nil];
   
+    _artwork.imageScaling = NSScaleToFit;
   _window.backgroundColor = [NSColor blackColor];
   [[NSApplication sharedApplication]
    setPresentationOptions:NSFullScreenWindowMask];
@@ -123,15 +124,42 @@
   [_centeredLabel setHidden:YES];
   
   _title.stringValue  = cur.name   ? cur.name   : @"Title";
-  _artist.stringValue = cur.artist ? cur.artist : @"Artist";
+  NSString *artist = cur.artist ? cur.artist : @"Artist";
   _album.stringValue  = cur.album  ? cur.album  : @"Album";
   _composer.stringValue = cur.composer ? cur.composer  : @"";
-
+    
+    [_artist setAttributedStringValue:[self styleArtist:artist]];
   
   iTunesArtwork *artwork = [[cur artworks] firstObject];
   NSImage *artworkImage = [[NSImage alloc] initWithData:artwork.rawData];
   
   _artwork.image = artworkImage;
+}
+
+- (NSAttributedString *)styleArtist:(NSString *)artist {
+    NSString *editedArtist = [artist stringByReplacingOccurrencesOfString:@", " withString:@"\n"];
+    editedArtist = [editedArtist stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
+    editedArtist = [editedArtist stringByReplacingOccurrencesOfString:@"/" withString:@" / "];
+    
+    NSMutableAttributedString *styledArtist = [[NSMutableAttributedString alloc] initWithString:editedArtist];
+
+    [self applyFont:@"Avenir-Light" withSize:35 toPattern:@"/" attributeString:styledArtist];
+//    [self applyFont:@"Avenir-Light-Oblique" withSize:35 toPattern:@"\\(.+\\)" attributeString:styledArtist];
+    
+    return styledArtist;
+    
+}
+
+- (void)applyFont:(NSString *)fontName withSize:(CGFloat)size toPattern:(NSString *)pattern attributeString:(NSMutableAttributedString *)attributedString {
+    NSString *string = [attributedString string];
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    
+    //  enumerate matches
+    NSRange range = NSMakeRange(0, [string length]);
+    [expression enumerateMatchesInString:string options:0 range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        NSRange slashRange = [result rangeAtIndex:0];
+        [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:fontName size:size] range:slashRange];
+    }];
 }
 
 @end
