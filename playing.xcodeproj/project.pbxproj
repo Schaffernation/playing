@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D82FE2F4191BDB5000F9B3AD /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		D82FE2F4191BDB5000F9B3AD /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
 		D8C371A7191D54E800348CAE /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		D8C371A9191D594A00348CAE /* rdio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdio.h; sourceTree = "<group>"; };
 		D8CEAA92191BD689003FEE23 /* playing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +125,7 @@
 				D8CEAAA7191BD689003FEE23 /* NPAppDelegate.h */,
 				D8CEAAA8191BD689003FEE23 /* NPAppDelegate.m */,
 				D8CEAAAA191BD689003FEE23 /* MainMenu.xib */,
-				D82FE2F4191BDB5000F9B3AD /* iTunes.h */,
+				D82FE2F4191BDB5000F9B3AD /* Music.h */,
 				D8C371A9191D594A00348CAE /* rdio.h */,
 				D8CEAA9C191BD689003FEE23 /* Supporting Files */,
 			);

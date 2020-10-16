@@ -1,4 +1,4 @@
 playing
 =======
 
-Displays the details of the song playing on a computer (iTunes, Rdio)
+Displays the details of the song playing on a computer (Music, Rdio)

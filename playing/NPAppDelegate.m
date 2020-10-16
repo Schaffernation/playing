@@ -7,18 +7,18 @@
 //
 
 #import "NPAppDelegate.h"
-#import "iTunes.h"
+#import "Music.h"
 #import "rdio.h"
 
 
 @implementation NPAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  _iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+  _Music = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
   _rdio = [SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
   
-  if ( [_iTunes isRunning] && _iTunes.playerState == iTunesEPlSPlaying ) {
-    [self updateScreenFromiTunes];
+  if ( [_Music isRunning] && _Music.playerState == MusicEPlSPlaying ) {
+    [self updateScreenFromMusic];
   } else if ( [_rdio isRunning] && _rdio.playerState == rdioEPSSPlaying ) {
     [self updateScreenFromRdio];
   } else {
@@ -26,9 +26,9 @@
   }
   
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self
-                                                      selector:@selector(iTunesChanged:)
-                                                          name:@"com.apple.iTunes.playerInfo"
-                                                        object:@"com.apple.iTunes.player"];
+                                                      selector:@selector(MusicChanged:)
+                                                          name:@"com.apple.Music.playerInfo"
+                                                        object:@"com.apple.Music.player"];
   
   [[NSDistributedNotificationCenter defaultCenter] addObserver:self
                                                       selector:@selector(rdioChanged:)
@@ -41,22 +41,22 @@
    setPresentationOptions:NSFullScreenWindowMask];
 }
 
-- (void)iTunesChanged:(NSNotification *)note {
+- (void)MusicChanged:(NSNotification *)note {
   NSString *object = [note object];
   NSString *name = [note name];
   NSDictionary *userInfo = [note userInfo];
   NSLog(@"<%p>%s: object: %@ name: %@ userInfo: %@", self, __PRETTY_FUNCTION__, object, name, userInfo);
   
   
-  switch (_iTunes.playerState) {
-    case iTunesEPlSPlaying:
+  switch (_Music.playerState) {
+    case MusicEPlSPlaying:
       [_rdio pause];
       
-    case iTunesEPlSPaused:
+    case MusicEPlSPaused:
       if (_rdio.playerState == rdioEPSSPlaying) {
         [self updateScreenFromRdio];
       } else {
-        [self updateScreenFromiTunes];
+        [self updateScreenFromMusic];
       }
       break;
     default:
@@ -69,10 +69,10 @@
   
   switch (_rdio.playerState) {
     case rdioEPSSPlaying:
-      [_iTunes pause];
+      [_Music pause];
     case rdioEPSSPaused:
-      if (_iTunes.playerState == iTunesEPlSPlaying) {
-        [self updateScreenFromiTunes];
+      if (_Music.playerState == MusicEPlSPlaying) {
+        [self updateScreenFromMusic];
       } else {
         [self updateScreenFromRdio];
       }
@@ -117,10 +117,10 @@
   _artwork.image = artworkImage;
 }
 
-- (void)updateScreenFromiTunes {
-  iTunesTrack *cur = _iTunes.currentTrack;
+- (void)updateScreenFromMusic {
+  MusicTrack *cur = _Music.currentTrack;
   
-  NSLog(@"Current iTunes Track : %@", cur.name);
+  NSLog(@"Current Music Track : %@", cur.name);
   [_centeredLabel setHidden:YES];
   
   _title.stringValue  = cur.name   ? cur.name   : @"Title";
@@ -130,7 +130,7 @@
     
     [_artist setAttributedStringValue:[self styleArtist:artist]];
   
-  iTunesArtwork *artwork = [[cur artworks] firstObject];
+  MusicArtwork *artwork = [[cur artworks] firstObject];
   NSImage *artworkImage = [[NSImage alloc] initWithData:artwork.rawData];
   
   _artwork.image = artworkImage;
