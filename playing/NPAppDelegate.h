@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class MusicApplication;
+@class iTunesApplication;
 @class rdioApplication;
 
 @interface NPAppDelegate : NSObject <NSApplicationDelegate>
@@ -21,7 +21,7 @@
 @property (weak) IBOutlet NSTextField *centeredLabel;
 @property (weak) IBOutlet NSTextFieldCell *centeredCell;
 
-@property (strong) MusicApplication *Music;
+@property (strong) iTunesApplication *iTunes;
 @property (strong) rdioApplication *rdio;
 
 @end
