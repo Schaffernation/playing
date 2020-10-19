@@ -32,7 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D82FE2F4191BDB5000F9B3AD /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		D492D8F5253E225600E5FBA5 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		D492D8F8253E287A00E5FBA5 /* playing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = playing.entitlements; sourceTree = "<group>"; };
 		D8C371A7191D54E800348CAE /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		D8C371A9191D594A00348CAE /* rdio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdio.h; sourceTree = "<group>"; };
 		D8CEAA92191BD689003FEE23 /* playing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,10 +123,11 @@
 		D8CEAA9B191BD689003FEE23 /* playing */ = {
 			isa = PBXGroup;
 			children = (
+				D492D8F8253E287A00E5FBA5 /* playing.entitlements */,
 				D8CEAAA7191BD689003FEE23 /* NPAppDelegate.h */,
 				D8CEAAA8191BD689003FEE23 /* NPAppDelegate.m */,
+				D492D8F5253E225600E5FBA5 /* Music.h */,
 				D8CEAAAA191BD689003FEE23 /* MainMenu.xib */,
-				D82FE2F4191BDB5000F9B3AD /* iTunes.h */,
 				D8C371A9191D594A00348CAE /* rdio.h */,
 				D8CEAA9C191BD689003FEE23 /* Supporting Files */,
 			);
@@ -223,6 +225,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -397,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = playing/playing.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
 				INFOPLIST_FILE = "playing/playing-Info.plist";
@@ -414,7 +419,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = playing/playing.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playing/playing-Prefix.pch";
 				INFOPLIST_FILE = "playing/playing-Info.plist";
