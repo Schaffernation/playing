@@ -129,11 +129,23 @@
   _composer.stringValue = cur.composer ? cur.composer  : @"";
     
     [_artist setAttributedStringValue:[self styleArtist:artist]];
-  
-//  iTunesArtwork *artwork = [[cur artworks] firstObject];
-//  NSImage *artworkImage = [[NSImage alloc] initWithData:artwork.rawData];
-//  
-//  _artwork.image = artworkImage;
+    
+    
+    MusicArtwork *trackArt = cur.artworks.firstObject;
+    NSImage *newArt = [[NSImage alloc] init];
+                        
+    // For some reason in the Music app sometimes the expected return of NSImage from trackArt.data
+    // is instead an NSAppleEventDescriptor containing raw data otherwise it's an image like normal.
+    // Also trackArt.rawData appears to be no longer used and empty :(
+    if ([trackArt.data.className isEqualToString:@"NSAppleEventDescriptor"]) {
+        NSAppleEventDescriptor *t = (NSAppleEventDescriptor*)trackArt.data;
+        NSData *d = t.data;
+        newArt = [[NSImage alloc] initWithData:d];
+    } else {
+        newArt = trackArt.data;
+    }
+    
+    _artwork.image = newArt;
 }
 
 - (NSAttributedString *)styleArtist:(NSString *)artist {
