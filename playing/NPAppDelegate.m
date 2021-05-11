@@ -36,7 +36,7 @@
 //                                                          name:@"com.rdio.desktop.playStateChanged"
 //                                                        object:nil];
   
-    _artwork.imageScaling = NSScaleToFit;
+    _artwork.imageScaling = NSImageScaleProportionallyUpOrDown;
   _window.backgroundColor = [NSColor blackColor];
   [[NSApplication sharedApplication]
    setPresentationOptions:NSFullScreenWindowMask];
